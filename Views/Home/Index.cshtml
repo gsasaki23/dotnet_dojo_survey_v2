@@ -1,0 +1,41 @@
+﻿@model User
+@{
+    ViewData["Title"] = "New Survey";
+}
+
+<div style="border:1px solid black; padding:5%;">
+<form asp-action="Create" asp-controller="Home" method="post">
+    <div>
+        <span asp-validation-for="FullName" class="error-msg"></span>
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" placeholder="ex: First Last">
+    </div>
+    <div>
+        <span asp-validation-for="Location" class="error-msg"></span>
+        <label asp-for="Location"></label>
+        <select asp-for="Location">
+            <option value="Orange County">Orange County</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="San Jose">San Jose</option>
+            <option value="Seattle">Seattle</option>
+        </select>
+    </div>
+    <div>
+        <span asp-validation-for="Language" class="error-msg"></span>
+        <label asp-for="Language"></label>
+        <select asp-for="Language">
+            <option value="C#">C#</option>
+            <option value="Python">Python</option>
+            <option value="Javascript">Javascript</option>
+        </select>
+    </div>
+    <div>
+        <span asp-validation-for="Comment" class="error-msg"></span>
+        <label asp-for="Comment"></label>
+        <input asp-for="Comment">
+    </div>
+    
+
+    <input value="Add User" type="submit">    
+</form>
+</div>
